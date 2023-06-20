@@ -8,7 +8,7 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  // Link
+  Link
 } from "react-router-dom";
 function App() {
   const [mode, setMode] = useState('light');
@@ -38,22 +38,22 @@ function App() {
   }
   return (
     <>
+      <Router>
       <Navbar title="TextUtils" mode={mode} toggle={toggleMode} />
       <Alert alert={alert} />
-      <TextForm heading="Enter the text you want to manipulate" mode={mode} showAlert={showAlert} />
-       {/* <Router>
+      {/* <TextForm heading="Enter the text you want to manipulate" mode={mode} showAlert={showAlert} /> */}
         <div className="container">
           <Routes>
-            <Route path="/about">
+            <Route exact path="/about">
               <About />
             </Route>
             
-            <Route path="/">
+            <Route exact path="/">
               <TextForm heading="Enter the text you want to manipulate" mode={mode} showAlert={showAlert} />
             </Route>
           </Routes>
         </div>
-      </Router> */}
+      </Router>
       {/* <About/> */}
 
     </>
